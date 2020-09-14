@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-lg-4 col-md-6 mb-4"  *ngFor="let product of productList">
+        <div class="card h-100">
+      <a href="" routerLink="/productDetails"><img class="card-img-top"  width="225" height="225" [src]="product.imageUrl" alt=""></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a routerLink="/productDetails">{{product.name}}</a>
+        </h4>
+        <h5>{{product.price}}&#8377;</h5>
+        <p class="card-text text-truncate">{{product.description}}</p>
+        <label><b>Quantity</b></label><input type="number">
+      </div>
+      <div class="card-footer">
+        <input type="button" class="btn btn-primary btn-sm"value="Add to cart">
+        <small class="text-muted" style="float: right;">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+      </div>
+    </div>
+    </div>
+
+</div>
+<!-- /.row -->
