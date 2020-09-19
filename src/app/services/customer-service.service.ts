@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const api="http://localhost:8888/register"
+// const api="http://localhost:5555/registers"              //for json
+const api="http://localhost:80/sample/"                 //for php
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,14 @@ const api="http://localhost:8888/register"
 export class CustomerServiceService {
 
  saveData(data){
-  return this.httpclient.post(api,data)
+   console.log("data is ");
+   console.log(data);
+  return this.httpclient.post(api+"registration.php",data)
  }
 
  getData()
  {
-   return this.httpclient.get(api)
+   return this.httpclient.get(api+"getCustomers.php");
  }
 
  getDataById(id)
@@ -29,7 +32,7 @@ export class CustomerServiceService {
 
  deleteData(id)
  {
-   return this.httpclient.delete(api+id)
+   return this.httpclient.delete(api+"/"+id)
  }
 
 // constructor(private httpclient:HttpClient) { }

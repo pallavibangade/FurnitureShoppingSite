@@ -1,0 +1,30 @@
+{
+  "registers": [
+    {
+      "firstName": "rutuja",
+      "lastName": "kale",
+      "phoneNo": "7788551122",
+      "email": "rutuja@yahoo.com",
+      "password": "rutuja",
+      "confirmPassword": "rutuja",
+      "state": "Maharashtra",
+      "city": "Amravti",
+      "landMark": "NIT Garden",
+      "pincode": "440015",
+      "id": 1
+    },
+    {
+      "firstName": "Amit",
+      "lastName": "Rathod",
+      "phoneNo": "8087445964",
+      "email": "amit@gmail.com",
+      "password": "amit",
+      "confirmPassword": "amit",
+      "state": "Uttar Pradesh",
+      "city": "Delhi",
+      "landMark": "near City hospital",
+      "pincode": "410087",
+      "id": 2
+    }
+  ]
+}

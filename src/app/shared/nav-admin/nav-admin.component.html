@@ -20,30 +20,31 @@
     
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item dropdown">
+        <h5><li class="nav-item active">
+          <a class="nav-link" routerLink="/product">Home<span class="sr-only">(current)</span></a>
+        </li></h5>
+        <h5><li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Product
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-              <a class="dropdown-item" href="#">Add Product</a>
-              <a class="dropdown-item" href="#">Edit Product</a>
-              <a class="dropdown-item" href="#">Delete Product</a>
+              <a class="dropdown-item" routerLink="/addProduct">Add Product</a>
+              <a class="dropdown-item" >Edit Product</a>
+              <a class="dropdown-item" routerLink="">Delete Product</a>
             </div>
-          </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+        </li></h5>
+        <h5><li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Customer
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Add Customer</a>
-              <a class="dropdown-item" href="#">Edit Customer</a>
+              <a class="dropdown-item" routerLink="/updateCustomer">Add Customer</a>
+              <a class="dropdown-item" routerLink="/updateCustomer">Edit Customer</a>
               <a class="dropdown-item" href="#">Delete Customer</a>
             </div>
-          </li>
-        <li class="nav-item dropdown">
+        </li></h5>
+        <h5><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Order
           </a>
@@ -51,8 +52,8 @@
             <a class="dropdown-item" href="#">Order Status</a>
             <a class="dropdown-item" href="#">Order History</a>
           </div>
-        </li>
+        </li></h5>
       </ul>
     </div>
-    <a class="btn  btn-outline-primary" style="float:right;" role="button" routerLink="/product">Logout</a>
+    <a class="btn  btn-outline-primary" style="float:right;" role="button" routerLink="/product"><h5>Logout</h5></a>
   </nav>

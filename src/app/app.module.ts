@@ -15,7 +15,7 @@ import { FilterComponent } from './product/filter/filter.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { SliderComponent } from './shared/slider/slider.component';
 import {NgbModule} from 'node_modules/bootstrap';
-//import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { CustomerComponent } from './customer/customer.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -34,6 +34,7 @@ import { NavAdminComponent } from './shared/nav-admin/nav-admin.component';
 import { NavCustomerComponent } from './shared/nav-customer/nav-customer.component';
 import { AdminProductDetailsComponent } from './product/admin-product-details/admin-product-details.component';
 import { DataServiceComponent } from './services/data-service/data-service.component';
+import {CustomerServiceService} from './services/customer-service.service'
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { DataServiceComponent } from './services/data-service/data-service.compo
     FilterComponent,
     ProductListComponent,
     SliderComponent,
-  //  LoginComponent,
+   LoginComponent,
     AdminComponent,
     CustomerComponent,
     RegistrationComponent,
@@ -72,7 +73,7 @@ import { DataServiceComponent } from './services/data-service/data-service.compo
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,CustomerServiceService],
   bootstrap: [AppComponent]
 })
 

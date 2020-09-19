@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormGroup } from '@angular/forms';
 import {AppRoutingModule} from './../app-routing.module';
-// import {FormBuilder, Validators } from '@angular/forms';
-import { FormGroup, FormBuilder,FormControl , Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,FormControl , Validators ,FormsModule} from '@angular/forms';
 import {  FormArray,ReactiveFormsModule  } from '@angular/forms';
 import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
-  loginForm:FormGroup;
-  constructor(private _formBuilder: FormBuilder) { }
+  login:FormGroup;
+  constructor(private router:Router) { }
 
-  ngOnInit(): void {
-    this.loginForm =new  FormGroup({
+    ngOnInit(): void {
+      this.login =new  FormGroup({
+        email:new FormControl(""),
+        password: new FormControl(""),
+      });  
+    }
 
+  checkFunction1(){
+    this.router.navigateByUrl('/adminDashBoard');
 
-      
-    });
- 
+    console.log(this.login.value);
   }
 
 }

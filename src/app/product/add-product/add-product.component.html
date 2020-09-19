@@ -1,11 +1,12 @@
-
+<app-nav-admin></app-nav-admin>
 <div class="container py-5">  
     <div class="card" style="width: 600px; margin: auto;">  
       <div class="card-header bg-primary text-white">  
         <h4 class="text-uppercase text-center">Product Details</h4>  
       </div>  
       <div class="card-body">  
-        <div class="row">  
+        <form [formGroup]="productForm"  autocomplete="off" (ngSubmit)="addProduct()">
+          <div class="row">  
           <div class="col-sm-6 col-md-6 col-xs-12">  
             <div class="form-group">  
               <label>Product Name:</label>  
@@ -13,7 +14,7 @@
                 <div class="input-group-prepend" >  
                     
                 </div>  
-                <input id="productName" type="text" class="form-control" style="border-radius: 8px;">  
+                <input id="prod_name" type="text" class="form-control" style="border-radius: 8px;" formControlName="prod_name" name="prod_name">  
               </div>  
             </div>  
           </div>  
@@ -24,7 +25,7 @@
                 <div class="input-group-prepend">  
                     
                 </div>  
-                <input id="productCategory" type="text" class="form-control" style="border-radius: 8px;">  
+                <input id="prod_category" type="text" class="form-control" style="border-radius: 8px;" formControlName="prod_category" name="prod_category">  
               </div>  
             </div>  
           </div>  
@@ -37,7 +38,7 @@
                   <div class="input-group-prepend">  
                       
                   </div>  
-                  <input id="productQuantity" type="number" class="form-control"style="border-radius: 8px;">  
+                  <input id="prod_quantity" type="number" class="form-control"style="border-radius: 8px;" formControlName="prod_quantity" name="prod_quantity">  
                 </div>  
               </div>  
             </div>  
@@ -48,7 +49,7 @@
                   <div class="input-group-prepend">  
                       
                   </div>  
-                  <input id="productPrice" type="number" class="form-control" style="border-radius: 8px;">  
+                  <input id="prod_price" type="number" class="form-control" style="border-radius: 8px;" formControlName="prod_price" name="prod_price">  
                 </div>  
               </div>  
             </div>    
@@ -61,7 +62,7 @@
                     <div class="input-group-prepend">  
                       
                     </div>  
-                    <input id="productSize" type="text" class="form-control" style="border-radius: 8px;">  
+                    <input id="prod_size" type="text" class="form-control" style="border-radius: 8px;" formControlName="prod_size" name="prod_size">  
                   </div>  
                 </div>  
               </div>
@@ -72,7 +73,7 @@
                     <div class="input-group-prepend">  
                      
                     </div>  
-                    <input id="productPhoto" type="file" class="">  
+                    <input id="prod_photo" type="file" class="form-control" formControlName="prod_photo" name="prod_photo" (change)="onFileSelect($event)">  
                   </div>  
                 </div>  
               </div>  
@@ -85,15 +86,14 @@
                       <div class="input-group-prepend">  
                           
                       </div>  
-                      <textarea id="w3review" name="w3review" rows="3" class="form-control" style="border-radius: 8px;" ></textarea>
+                      <textarea id="prod_desc"  rows="3" class="form-control" style="border-radius: 8px;" formControlName="prod_desc" name="prod_desc"></textarea>
                     </div>  
               </div> 
               </div>  
         </div>  
-            
         <button type="submit" class="btn btn-outline-primary rounded-10 " >Add Product</button>&nbsp;&nbsp;&nbsp;&nbsp;
         <button type="reset" class="btn btn-outline-primary rounded-10 " >Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
-            
+      </form>      
       </div>  
     </div>  
   </div> 

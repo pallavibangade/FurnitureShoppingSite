@@ -1,4 +1,5 @@
-<div class="container py-5">
+<app-nav></app-nav>
+<div class="container" style="margin-top: 5%;margin-bottom:5%;">
   <div class="card" style="width: 600px; margin: auto;">
     <div class="card-header bg-primary text-white">
       <h4 class="text-uppercase text-center">Registration</h4>
@@ -9,13 +10,21 @@
           <div class="col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
               <label>Fisrt Name:</label>
-              <div class="input-group">
+              <div class="input-group h-100">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fa fa-user"></i>
                   </span>
                 </div>
-                <input id="firstName" type="text" class="form-control"   formControlName="firstName" >
+                <input id="firstName" type="text" class="form-control"   formControlName="firstName" name="firstName">
+                <div class="alert alert-primary" *ngIf="registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched">
+                  <div *ngIf="registrationForm.get('firstName').errors.required">
+                       Name is required
+                  </div>
+                  <div *ngIf="registrationForm.get('firstName').errors.pattern">
+                      Name should contain characters and space only
+                  </div>
+              </div>
               </div>
             </div>
           </div>
@@ -28,7 +37,7 @@
                     <i class="fa fa-user"></i>
                   </span>
                 </div>
-                <input id="lastName" type="text" class="form-control"  formControlName="lastName" autocomplete="off"> 
+                <input id="lastName" type="text" class="form-control"  formControlName="lastName" autocomplete="off" name="lastName"> 
               </div>
             </div>
           </div>
@@ -43,7 +52,7 @@
                     <i class="fa fa-phone"></i>
                   </span>
                 </div>
-                <input id="phoneNo" type="text" class="form-control" ng-model="phoneNo" formControlName="phoneNo" autocomplete="off">
+                <input id="phoneNo" type="text" class="form-control" ng-model="phoneNo" formControlName="phoneNo" autocomplete="off" name="phoneNo">
               </div>
             </div>
           </div>
@@ -56,7 +65,7 @@
                     <i class="fa fa-envelope"></i>
                   </span>
                 </div>
-                <input id="email" type="text" class="form-control" ng-model="email" formControlName="email" autocomplete="off">
+                <input id="email" type="text" class="form-control" ng-model="email" formControlName="email" autocomplete="off" name="email">
               </div>
             </div>
           </div>
@@ -71,7 +80,15 @@
                     <i class="fa fa-lock"></i>
                   </span>
                 </div>
-                <input id="password" type="password" class="form-control" ng-model="password" formControlName="password" autocomplete="off">
+                <input id="password" type="password" class="form-control" ng-model="password" formControlName="password" autocomplete="off" name="password"> 
+                <!-- <div *ngIf="password.errors && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass] = "'error'"> 
+                  <div *ngIf="password.errors.required">
+                    Password required.
+                  </div>  
+                  <div *ngIf="password.errors.pattern">
+                    Password not valid.
+                  </div> 
+                </div>		 -->
               </div>
             </div>
           </div>
@@ -84,7 +101,7 @@
                     <i class="fa fa-lock"></i>
                   </span>
                 </div>
-                <input id="confirmPassword" type="password" class="form-control" ng-model="confirmPassword" formControlName="confirmPassword" autocomplete="off">
+                <input id="confirmPassword" type="password" class="form-control" ng-model="confirmPassword" formControlName="confirmPassword" autocomplete="off" name="confirmPassword">
               </div>
             </div>
           </div>
@@ -103,7 +120,7 @@
                     </svg>
                   </span>
                 </div>
-                <input id="state" type="next" class="form-control" ng-model="state"formControlName="state" autocomplete="off" >
+                <input id="state" type="next" class="form-control" ng-model="state"formControlName="state" autocomplete="off" name="state">
               </div>
             </div>
           </div>
@@ -120,7 +137,7 @@
                     </svg>
                   </span>
                 </div>
-                <input id="city" type="text" class="form-control"  formControlName="city" autocomplete="off" >
+                <input id="city" type="text" class="form-control"  formControlName="city" autocomplete="off" name="city">
               </div>
             </div>
           </div>
@@ -139,7 +156,7 @@
                     </svg>
                   </span>
                 </div>
-                <input id="landMark" type="next" class="form-control" ng-model="landMark" formControlName="landMark" autocomplete="off" >
+                <input id="landMark" type="next" class="form-control" ng-model="landMark" formControlName="landMark" autocomplete="off" name="landMark">
               </div>
             </div>
           </div>
@@ -156,7 +173,7 @@
                     </svg>
                   </span>
                 </div>
-                <input id="pincode" type="text" class="form-control" formControlName="pincode" autocomplete="off" >
+                <input id="pincode" type="text" class="form-control" formControlName="pincode" autocomplete="off" name="pincode">
               </div>
             </div>
           </div>

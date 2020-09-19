@@ -21,31 +21,53 @@ export class RegistrationComponent implements OnInit {
   reg:any=[];
 
 
-  // getStudentData()
-  // {
-  //   this._dataSer.getData().subscribe((res)=>{
-  //     this.reg=res
-  //   })
-  // }
+  getCustomertData()
+  {
+
+    this.customerService.getData().subscribe((res)=>{
+      this.reg=res;
+    })
+
+    this.reg.forEach(element => {           //working for geting all data from json
+      console.log(element)
+    });
+
+
+  //   this.reg.forEach((obj => {                                   //working for get all result in "firstName:rutuja" format 
+  //     Object.entries(obj).forEach(([key, value]) => {
+  //         console.log(key +":"+value);
+  //     });
+  //     console.log('-------------------');
+  // }));
+
+  }
   
   register()
   {
    // this.student.push(this.form.value);
-   this._dataSer.saveData(this.registrationForm.value).subscribe((res)=>{
+   this.customerService.saveData(this.registrationForm.value).subscribe((res)=>{   //working to add user data
      alert("data save successfully")
    })
   }
 
+  // delete(id)         //working for delete
+  // {
+  //   this.customerService.deleteData(id).subscribe((res)=>{
+  //     alert("data deleted successfully")
+  //     // this.getStudentData()
+  //   })
+  // }
 
-  constructor(private _dataSer:CustomerServiceService) { }
+
+  constructor(private customerService:CustomerServiceService) { }
 
   ngOnInit(): void {
     this.registrationForm=new FormGroup({
-      firstName:new FormControl(""),
+      firstName:new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z ]*")]),
       lastName:new FormControl(""),
       phoneNo:new FormControl(""),
-      email:new FormControl(""),
-      password:new FormControl(""),
+      email:new FormControl("",[Validators.required,Validators.pattern("[\w._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}")]),
+      password:new FormControl("",[Validators.required, Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$")]),
       confirmPassword:new FormControl(""),
       state:new FormControl(""),
       city:new FormControl(""),
@@ -57,8 +79,5 @@ export class RegistrationComponent implements OnInit {
   //  })
   }
 
-  // clickFunction(){
-  //   // alert(this.registrationForm.value);
-  //    console.log(this.registrationForm.value);
-  // }
+
 }

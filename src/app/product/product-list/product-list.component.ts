@@ -15,8 +15,7 @@ productList:Product[]=[]
 constructor(private productService:ProductService) { }
 
 ngOnInit(): void {
-  this.productList=this.productService.getProducts();
-  // console.log(this.productService.getProducts())
+  this.productList=this.productService.getProducts();  
 }
 
 }
